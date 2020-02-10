@@ -1,0 +1,51 @@
+import java.util.Scanner;
+class input
+{
+   float calc(char ch)
+{
+   Scanner scan = new Scanner(System.in);
+  float a,b,res=0;
+  System.out.print("Enter Two Number : ");
+    a = scan.nextFloat();
+    b = scan.nextFloat();
+    if(ch=='1')
+      res=a+b;
+    else if(ch=='2')
+      res=a-b;
+     else if(ch=='3')
+      res=a*b;
+    else if(ch=='4')
+      res=a/b;
+     
+     return res;
+}     
+
+   
+}
+
+public class JavaProgram
+{
+    public static void main(String args[])
+    {
+        float res;
+        char choice, ch;
+        Scanner scan = new Scanner(System.in);
+		
+        do
+        {
+            System.out.print("1. Addition\n");
+            System.out.print("2. Subtraction\n");
+            System.out.print("3. Multiplication\n");
+            System.out.print("4. Division\n");
+            System.out.print("5. Exit\n\n");
+            System.out.print("Enter Your Choice : ");
+            choice = scan.next().charAt(0);
+           if(choice=='5')
+              System.exit(0);
+            input ob = new input();
+            res=ob.calc(choice);
+	    System.out.println("Result of given input is = "+res);
+            System.out.print("\n..............................................\n\n");
+        }while(choice != 5);       
+    }
+}
